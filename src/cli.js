@@ -9,13 +9,13 @@ const errors = {
 };
 
 const struct = {
-  root: ['about', 'resume', 'contact', 'talks'],
+  root: ['about', 'resume', 'contact', 'coursework'],
   skills: ['proficient', 'familiar'],
 };
 
 const commands = {};
 let systemData = {};
-const rootPath = 'users/codebytere/root';
+const rootPath = 'users/victor-hugo-dc/root';
 
 const getDirectory = () => localStorage.directory;
 const setDirectory = (dir) => {
@@ -144,7 +144,7 @@ $(() => {
   pages.push($.get('pages/resume.html'));
   pages.push($.get('pages/root.html'));
   pages.push($.get('pages/skills.html'));
-  pages.push($.get('pages/talks.html'));
+  pages.push($.get('pages/coursework.html'));
   $.when
     .apply($, pages)
     .done(
@@ -157,7 +157,7 @@ $(() => {
         resumeData,
         rootData,
         skillsData,
-        talksData,
+        courseworkData,
       ) => {
         systemData['about'] = aboutData[0];
         systemData['contact'] = contactData[0];
@@ -167,7 +167,7 @@ $(() => {
         systemData['resume'] = resumeData[0];
         systemData['root'] = rootData[0];
         systemData['skills'] = skillsData[0];
-        systemData['talks'] = talksData[0];
+        systemData['coursework'] = courseworkData[0];
       },
     );
 
